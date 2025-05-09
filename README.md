@@ -3,33 +3,31 @@
 ## Project Description
 This is a full-stack application for managing and reviewing movies. It features a Spring Boot backend providing a RESTful API and a JavaFX client for user interaction. The system supports user authentication, role-based access control, and CRUD operations for movies and reviews.
 
-
 ## Table of Contents
-1.  [Prerequisites](#prerequisites)
-2.  [Setup](#setup)
-    *   [Database Setup](#database-setup)
-3.  [Running the Application](#running-the-application)
-    *   [Backend (Server)](#backend-server)
-    *   [Frontend (Client)](#frontend-client)
-4.  [Running Tests (Backend)](#running-tests-backend)
-5.  [Application Architecture](#application-architecture)
-6.  [API Specification (High-Level)](#api-specification-high-level)
-7.  [Security Model](#security-model)
-8.  [Test Strategy](#test-strategy)
-9.  [Software Design Decisions & Patterns](#software-design-decisions--patterns)
-10. [Design Rationale](#design-rationale)
-11. [Team Reflections](#team-reflections)
-    *   [Role-Based Access Decisions](#role-based-access-decisions)
-    *   [Exception Handling Strategy](#exception-handling-strategy)
-    *   [Use and Justification of Design Patterns](#use-and-justification-of-design-patterns)
-    *   [Trade-offs: Complexity vs. Maintainability](#trade-offs-complexity-vs-maintainability)
+1.  [Team Members](#team-members)
+2.  [Prerequisites](#prerequisites)
+3.  [Project Setup](#project-setup)
+4.  [Running the Application](#running-the-application)
+5.  [Running Tests](#running-tests)
+6.  [Application Architecture](#application-architecture)
+7.  [API Specification](#api-specification)
+8.  [Security Model](#security-model)
+9.  [Test Strategy](#test-strategy)
+10. [Design Decisions & Patterns](#design-decisions--patterns)
+11. [Design Rationale](#design-rationale)
+12. [Team Reflections](#team-reflections)
+
+## Team Members
+*   Nihar Lodaya
+*   Reem Ooka
+*   Roman Huerta
 
 ## Prerequisites
 *   Java JDK 21 or newer
 *   Apache Maven 3.6.x or newer
 *   MySQL Server 8.x
 
-## Setup
+## Project Setup
 
 1.  **Clone the repository:**
     ```bash
@@ -65,19 +63,19 @@ The frontend is a JavaFX application.
     ```bash
     cd client
     ```
-2.  Run the application using Maven:
-    *   If your `client/pom.xml` is configured with the `javafx-maven-plugin`:
-        ```bash
-        mvn javafx:run
-        ```
+2.  Run the application using Maven (ensure your `client/pom.xml` is configured appropriately):
+    ```bash
+    mvn javafx:run
+    ```
 
-## Running Tests (Backend)
+
+## Running Tests
 
 1.  Navigate to the server directory:
     ```bash
     cd server
     ```
-2.  Run the tests using Maven, providing your MySQL credentials if your tests are configured to run against a live MySQL database:
+2.  Run the backend tests using Maven. If your tests are configured to run against a live MySQL database (as opposed to an in-memory one like H2), provide your MySQL credentials:
     ```bash
     mvn clean test -DDB_USERNAME=your_mysql_username -DDB_PASSWORD=your_mysql_password
     ```
@@ -105,9 +103,9 @@ The application follows a classic client-server architecture:
 *   **Database:**
     *   MySQL is used for persistent data storage.
 
-## API Specification (High-Level)
+## API Specification
 
-The backend exposes the following primary REST endpoints:
+The backend exposes the following primary REST endpoints. All paths are prefixed with `/api`.
 
 *   **Authentication (`/api/auth`):**
     *   `POST /api/auth/register`: User registration.
@@ -119,7 +117,7 @@ The backend exposes the following primary REST endpoints:
     *   `POST /api/movies`: Create a new movie (Admin only).
     *   `PUT /api/movies/{id}`: Update an existing movie (Admin only).
     *   `DELETE /api/movies/{id}`: Delete a movie (Admin only).
-*   **Reviews (`/api/movies/{movieId}/reviews` and `/api/reviews`):**
+*   **Reviews (`/api/reviews` and `/api/movies/{movieId}/reviews`):**
     *   `GET /api/movies/{movieId}/reviews`: Get all reviews for a specific movie.
     *   `POST /api/movies/{movieId}/reviews`: Create a new review for a movie.
     *   `PUT /api/reviews/{reviewId}`: Update a review (Owner or Admin).
@@ -149,11 +147,10 @@ The backend exposes the following primary REST endpoints:
     *   **Integration Tests:** Test interactions between components, including controller-service-repository layers and API endpoints.
         *   `@SpringBootTest` is used to load the application context.
         *   `MockMvc` is used for testing REST controllers (`MovieControllerIntegrationTests`).
-        *   Tests can be configured to run against a dedicated test database (e.g., H2 in-memory) or a configured MySQL instance.
 *   **Frontend:**
     *   *(Manual testing is assumed unless UI test frameworks like TestFX are implemented. If so, describe here.)*
 
-## Software Design Decisions & Patterns
+## Design Decisions & Patterns
 
 Several design patterns and principles have been applied:
 
