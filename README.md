@@ -67,9 +67,10 @@ The frontend is a JavaFX application.
     ```bash
     mvn javafx:run
     ```
-3. Login Details:
-Default admin username: admin
-Default admin password: admin123
+3. **Login Details:**  
+   Default admin username: `admin`  
+   Default admin password: `admin123`
+
 
 
 ## Running Tests
