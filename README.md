@@ -44,7 +44,7 @@ This is a full-stack application for managing and reviewing movies. It features 
 
 ### Backend (Server)
 The backend is a Spring Boot application.
-* Open CMD (Command Prompt) first.
+* Open in CMD (Command Prompt) only.
 
 Then:
 1.  Navigate to the server directory:
@@ -60,7 +60,8 @@ Then:
 
 ### Frontend (Client)
 The frontend is a JavaFX application.
-
+* Open in CMD (Command Prompt) only.v
+  
 1.  Navigate to the client directory:
     ```bash
     cd client
@@ -76,7 +77,8 @@ The frontend is a JavaFX application.
 
 
 ## Running Tests
-
+* Open in CMD (Command Prompt) only.
+  
 1.  Navigate to the server directory:
     ```bash
     cd server
