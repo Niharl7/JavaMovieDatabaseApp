@@ -31,8 +31,8 @@ This is a full-stack application for managing and reviewing movies. It features 
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd lab
+    git clone http://github.com/niharl7/SDDProject/
+    cd SDDProject
     ```
 2.  **Database Setup:**
     *   Ensure your MySQL server is running.
@@ -67,6 +67,10 @@ The frontend is a JavaFX application.
     ```bash
     mvn javafx:run
     ```
+3. **Login Details:**  
+   Default admin username: `admin`  
+   Default admin password: `admin123`
+
 
 
 ## Running Tests
