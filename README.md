@@ -32,7 +32,7 @@ This is a full-stack application for managing and reviewing movies. It features 
 1.  **Clone the repository:**
     ```bash
     git clone http://github.com/niharl7/SDDProject/
-    cd project
+    cd SDDProject
     ```
 2.  **Database Setup:**
     *   Ensure your MySQL server is running.
