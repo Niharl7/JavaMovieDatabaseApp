@@ -23,7 +23,7 @@ This is a full-stack application for managing and reviewing movies. It features 
 *   Roman Huerta
 
 ## Prerequisites
-*   Java JDK 11 only (do not use newer versions)
+*   Java JDK 21 only (do not use newer versions)
 *   Apache Maven 3.6.x or newer
 *   MySQL Server 8.x
 
