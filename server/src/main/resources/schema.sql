@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS users (
 -- Create User_Roles Table
 CREATE TABLE IF NOT EXISTS user_roles (
     user_id BIGINT NOT NULL,
-    role_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (user_id, role_name),
+    role VARCHAR(50) NOT NULL,
+    PRIMARY KEY (user_id, role),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
