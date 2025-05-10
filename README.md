@@ -23,7 +23,7 @@ This is a full-stack application for managing and reviewing movies. It features 
 *   Roman Huerta
 
 ## Prerequisites
-*   Java JDK 21 or newer
+*   Java JDK 11 only (do not use newer versions)
 *   Apache Maven 3.6.x or newer
 *   MySQL Server 8.x
 
@@ -44,7 +44,9 @@ This is a full-stack application for managing and reviewing movies. It features 
 
 ### Backend (Server)
 The backend is a Spring Boot application.
+* Open CMD (Command Prompt) first.
 
+Then:
 1.  Navigate to the server directory:
     ```bash
     cd server
